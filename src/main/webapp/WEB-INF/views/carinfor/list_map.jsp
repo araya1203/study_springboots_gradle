@@ -1,5 +1,8 @@
 <%@ page import="java.util.HashMap, java.util.ArrayList, com.yojulab.study_springboot.utils.Paginations" %>
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+=======
+>>>>>>> bca13a0dffd1ac03dcc649e318d8a8875230e297
 
    
         <!DOCTYPE html>
@@ -113,7 +116,83 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                     </form>
+=======
+                        <h2>Table</h2>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Car Name</th>
+                                    <th>ID</th>
+                                    <th>Manufacturer ID</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="carTableBody">
+                                <% ArrayList resultList=(ArrayList)result.get("resultList"); 
+                                    for(int i=0; i < resultList.size(); i=i+1){
+                                        HashMap record=(HashMap)resultList.get(i); %>
+                                    <tr>
+                                        <td>
+                                            <%= record.get("CAR_NAME") %>
+                                        </td>
+                                        <td>
+                                            <%= record.get("YEAR") %>
+                                        </td>
+                                        <td>
+                                            <%= record.get("CAR_INFOR_ID") %>
+                                        </td>
+                                        <td>
+                                            <%= record.get("COMPANY_ID") %>
+                                        </td>
+                                        <td>
+                                            <button formaction='/carInfor/map/deleteAndSelectSearch/<%= record.get("CAR_INFOR_ID") %>' formmethod="post">Del</button>
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                                        <!-- Empty -->
+                            </tbody>
+                        </table>
+
+                        <%
+                        Paginations paginations = (Paginations)result.get("paginations"); 
+                        %>
+                        <div>총 갯수 : <%= paginations.getTotalCount() %></div>
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+
+                                <%
+                                for(int i=paginations.getBlockStart();i <= paginations.getBlockEnd(); i=i+1){
+                                %>
+                                <li class="page-item">
+                                    <a class="page-link" href="/carInfor/map/selectSearch?currentPage=<%= i %>"><%= i %></a>
+                                </li>
+                                <%
+                                }
+                                %>
+                                <!--li class="page-item">
+                                    <a class="page-link" href="/carInfor/map/selectSearch?currentPage=1">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="/carInfor/map/selectSearch?currentPage=2">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="/carInfor/map/selectSearch?currentPage=3">3</a>
+                                </li-->
+
+                                <li class="page-item">
+                                    <a class="page-link" href="/carInfor/map/selectSearch?currentPage=<%= paginations.getNextPage() %>">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </form>
+>>>>>>> bca13a0dffd1ac03dcc649e318d8a8875230e297
 
 
                     <!-- Footer -->

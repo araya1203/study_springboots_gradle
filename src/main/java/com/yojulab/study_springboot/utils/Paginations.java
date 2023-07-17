@@ -1,6 +1,9 @@
 package com.yojulab.study_springboot.utils;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bca13a0dffd1ac03dcc649e318d8a8875230e297
 public class Paginations {
 	private int pageScale = 10; // 페이지당 게시물 수
 	private int blockScale = 5; // 블록당 페이지수
@@ -160,5 +163,9 @@ public class Paginations {
     }
 
     
+<<<<<<< HEAD
 }
     
+=======
+}
+>>>>>>> bca13a0dffd1ac03dcc649e318d8a8875230e297

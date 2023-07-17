@@ -16,7 +16,7 @@ import com.yojulab.study_springboot.utils.Paginations;
 public class CarInforsService {
     @Autowired
     SharedDao sharedDao;
-    
+
     // foreach HashMap.put("CAR_INFOR_ID_LIST", CAR_INFOR_ID_LIST)
     public Object selectInUID(Map dataMap) {
         String sqlMapId = "CarInfors.selectInUID";
